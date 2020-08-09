@@ -12,7 +12,7 @@ document.getElementById("cFullscreen").addEventListener("click",()=>{
 
 
 function openFullscreen() {
-    let elem = document.querySelector(".page");
+    let elem = document.body;
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
     } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -26,7 +26,7 @@ function openFullscreen() {
 
 /* Close fullscreen */
 function closeFullscreen() {
-    let elem = document.querySelector(".page");
+    let elem = document.body;
     if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.mozCancelFullScreen) { /* Firefox */
