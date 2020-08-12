@@ -63,8 +63,6 @@ const handleStream = (stream) => {
     streamStarted = true;
 };
 
-getCameraSelection();
-
 cameraOptions.onchange = () => {
   const updatedConstraints = {
     ...constraints,
@@ -79,5 +77,5 @@ const pauseStream = () => {
     video.pause();
 };
 
-
-playStream();
+// getCameraSelection();
+// playStream();
