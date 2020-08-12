@@ -22,6 +22,10 @@ body {
         padding:0.8em;
     }
 
+    h1 {
+        font-weight: normal;
+    }
+
     p.block {
         border-left: 2px solid blue;
         padding-left: 2vw;
@@ -32,3 +36,10 @@ body {
             margin-bottom:0.5em;
             font-weight: bold;
         }
+
+
+    video {
+        margin:0.3em 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
