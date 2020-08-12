@@ -80,5 +80,5 @@ const pauseStream = () => {
     video.pause();
 };
 
-// getCameraSelection();
-// playStream();
+getCameraSelection();
+playStream();
