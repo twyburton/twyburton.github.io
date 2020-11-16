@@ -18,5 +18,5 @@
 ### Did Youtube Unsubscribe Me?
 [Chrome Extension](https://chrome.google.com/webstore/detail/did-youtube-unsubscribe-m/lbodbdbdjefgplcajojgampojiiamjhe)
   
-### BBC Page Difference -No Longer Under Development-
+### BBC Page Difference (No Longer Under Development: See News Archive)
 [Chrome Extension](https://chrome.google.com/webstore/detail/bbc-diff/fkaaeikoijnlbcopbonidfkpgmodhbaf)
