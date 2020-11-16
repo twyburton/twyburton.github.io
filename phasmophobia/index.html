@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Phasmophobia</title>
+	
+	<link href="main.css" rel="stylesheet">
+	<script src="hunt.js" defer></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<h1>Phasmophobia</h1>
+	
+	<h2>Evidence</h2>
+	
+	<select onchange="findEvidence()" class="evidence-list" id="add-evidence">
+		<option value="default" >Select Found Evidence</option>
+	</select>
+	
+	<select onchange="discountEvidence()" class="evidence-list" id="discount-evidence">
+		<option value="default" >Select Evidence To Discount</option>
+	</select>
+	
+	<div id="add-evidence-filters"></div>
+	
+	<h2>Possible Ghosts</h2>
+	
+	<div id="candidate-ghosts"></div>
+
+</body>
+</html>
