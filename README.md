@@ -9,6 +9,9 @@
 
 [Firefox Addon](https://addons.mozilla.org/en-GB/firefox/addon/news-archive/)
 
+### Phasmophobia Evidence Journal
+[Website](https://twyburton.github.io/phasmophobia/)
+
 ### Enhanced Save Financial Times
 [Chrome Extension](https://chrome.google.com/webstore/detail/enhanced-financial-times/nchhgdhcbjokhjpeiippnhgmgppeemmo)
 
