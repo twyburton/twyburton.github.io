@@ -9,9 +9,6 @@
 
 [Firefox Addon](https://addons.mozilla.org/en-GB/firefox/addon/news-archive/)
 
-### Phasmophobia Evidence Journal
-[Website](https://twyburton.github.io/phasmophobia/)
-
 ### Enhanced Save Financial Times
 [Chrome Extension](https://chrome.google.com/webstore/detail/enhanced-financial-times/nchhgdhcbjokhjpeiippnhgmgppeemmo)
 
@@ -20,6 +17,9 @@
 
 ### Did Youtube Unsubscribe Me?
 [Chrome Extension](https://chrome.google.com/webstore/detail/did-youtube-unsubscribe-m/lbodbdbdjefgplcajojgampojiiamjhe)
+
+### Phasmophobia Evidence Journal
+[Website](https://twyburton.github.io/phasmophobia/)
   
 ### BBC Page Difference (No Longer Under Development: See News Archive)
 [Chrome Extension](https://chrome.google.com/webstore/detail/bbc-diff/fkaaeikoijnlbcopbonidfkpgmodhbaf)
