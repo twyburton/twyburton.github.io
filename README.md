@@ -9,6 +9,9 @@
 
 [Firefox Addon](https://addons.mozilla.org/en-GB/firefox/addon/news-archive/)
 
+### PGP for WhatsApp
+[Chrome Extension](https://chrome.google.com/webstore/detail/pgp-for-whatsapp/acfnffcajlhbanaaaompjnojnmacefck)
+
 ### Enhanced Save Financial Times
 [Chrome Extension](https://chrome.google.com/webstore/detail/enhanced-financial-times/nchhgdhcbjokhjpeiippnhgmgppeemmo)
 
