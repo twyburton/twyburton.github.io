@@ -354,6 +354,10 @@ document.getElementById("action_pause").addEventListener("click",()=>{
 	gameUIUpdate();
 });
 document.getElementById("action_reset").addEventListener("click",()=>{
+
+	addFilters = new Set();
+	discountFilters = new Set();
+
 	gameContext.offset = 0;
 	gameContext.state = "INACTIVE";
 
