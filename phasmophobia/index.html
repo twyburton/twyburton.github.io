@@ -22,26 +22,35 @@
 	</div>
 
 
-
-	<h2>Evidence</h2>
-
-	<select onchange="findEvidence()" class="evidence-list" id="add-evidence">
-		<option value="default" >Select Found Evidence</option>
-	</select>
-
-	<select onchange="discountEvidence()" class="evidence-list" id="discount-evidence">
-		<option value="default" >Select Evidence To Discount</option>
-	</select>
-
 	<div class="panel">
-		<div class="panel-inner" id="add-evidence-filters"></div>
+
+		<div class="panel-inner">
+
+			<h2>Evidence</h2>
+
+			<select onchange="findEvidence()" class="evidence-list" id="add-evidence">
+				<option value="default" >Select Found Evidence</option>
+			</select>
+
+			<select onchange="discountEvidence()" class="evidence-list" id="discount-evidence">
+				<option value="default" >Select Evidence To Discount</option>
+			</select>
+
+
+			<div id="add-evidence-filters"></div>
+
+
+		</div>
+
+
+		<div class="panel-inner primary">
+			<h2>Candidate Ghosts</h2>
+
+			<p><input type="checkbox" id="details" name="details" onchange="drawPossibleGhosts()"> <label for="details">Show all ghost traits</label></p>
+
+			<div id="candidate-ghosts"></div>
+		</div>
 	</div>
-
-	<h2>Possible Ghosts</h2>
-
-	<p><input type="checkbox" id="details" name="details" onchange="drawPossibleGhosts()"> <label for="details">Show all ghost traits</label></p>
-
-	<div id="candidate-ghosts"></div>
 
 </body>
 </html>

@@ -86,6 +86,14 @@ div.panel {
 
 	}
 
+	div.panel div.panel-inner:not(:first-child) {
+		margin-left:10px;
+	}
+
+	div.panel div.panel-inner.primary {
+		flex:1;
+	}
+
 		div#add-evidence-filters {
 			margin-top:5px;
 			display:flex;
