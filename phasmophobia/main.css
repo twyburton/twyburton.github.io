@@ -99,6 +99,11 @@ div.panel {
 				border: 1px solid var(--main-accent);
 			}
 
+			div#add-evidence-filters div.add{
+				background:var(--green-light);
+				border: 1px solid var(--green-accent);
+			}
+
 			div#add-evidence-filters div svg {
 				position: relative;
     			top: 2px;
