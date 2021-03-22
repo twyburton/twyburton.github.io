@@ -1,25 +1,129 @@
+:root {
+
+	/* BLUE THEME */
+	--main-dark:#060d13;
+	--main-light:#121d27;
+	--main-accent:#262d34;
+
+	/* RED THEME */
+	--main-dark: #130606;
+	--main-light: #271212;
+	--main-accent: #342626;
+
+
+	--yellow-light:#272712;
+	--yellow-accent:#343426;
+
+	--green-light:#122712;
+	--green-accent:#263429;
+}
+
 body {
 	font-family: Helvetica, sans-serif;
-	background:#232323;
+	background:#0e0e0e;
+	background:var(--main-dark);
 	color:white;
 }
 
 
+	div.header {
+		background:grey;
+		background:var(--main-light);
+		border: 1px solid var(--main-accent);
+		display:flex;
+	}
+
+	div.header.active {
+		background:var(--green-light);
+		border: 1px solid var(--green-accent);
+	}
+
+	div.header.paused {
+		background:var(--yellow-light);
+		border: 1px solid var(--yellow-accent);
+	}
+
+		div.header h1 {
+			padding:0;
+			margin:0;
+			font-weight: bold;
+			font-size:18px;
+			padding: 5px;
+		}
+
+		div.primary {
+			flex:1;
+		}
+
+		div.header div{
+			padding:0;
+			margin:0;
+			font-size:18px;
+			padding: 5px;
+		}
+
+		div.header div.action {
+			padding-top:7px;
+			padding-bottom:3px;
+			cursor:pointer;
+		}
+
+		div.header div.action:hover {
+			background:var(--main-accent);
+		}
+
+
+		div.header div.timer {
+			margin-right:20px;
+		}
+
+
+div.panel {
+	display:flex;
+}
+
+	div.panel div.panel-inner {
+
+	}
+
+		div#add-evidence-filters {
+			margin-top:5px;
+			display:flex;
+			flex-direction: column;
+		}
+
+			div#add-evidence-filters div{
+				padding:5px 30px;
+				margin-bottom:3px;
+				background:var(--main-light);
+				border: 1px solid var(--main-accent);
+			}
+
+			div#add-evidence-filters div svg {
+				position: relative;
+    			top: 2px;
+			}
+
 div.ghost {
 	border:1px solid white;
-	border-radius:5px;
 	padding:5px;
 	margin-bottom:3px;
+
+	background:var(--main-light);
+	border: 1px solid var(--main-accent);
 }
 
 	div.ghost div:nth-child(1){
 		font-size:1.2em;
 	}
-	
+
 	div.ghost div:nth-child(2){
 		font-size:0.9em;
 	}
-	
+
 select {
 	padding:5px;
+	background: var(--main-light);
+	border: 1px solid var(--main-accent);
+	color: white;
 }

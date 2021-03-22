@@ -146,19 +146,25 @@ const GHOSTS = [
 	},
 ];
 
+const BUTTONS = {
+	PLAY: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>',
+	PAUSE: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>',
+	RESET: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/></svg>',
+}
+
 
 function init(){
-	
+
 	// Get all evidences
 	let evidences = new Set();
 	GHOSTS.forEach( (i) => {
-		
+
 		i.evidence.forEach( (e) => {
 			evidences.add(e);
 		});
-		
+
 	});
-	
+
 	// Add evidences to dropdowns
 	let evidenceDropdowns = document.getElementsByClassName("evidence-list");
 	evidences.forEach( (e) => {
@@ -166,7 +172,7 @@ function init(){
 			d.innerHTML += `<option value='${e}'>${e}</option>`;
 		};
 	});
-	
+
 }
 
 
@@ -174,54 +180,62 @@ let addFilters = new Set();
 let discountFilters = new Set();
 
 function findEvidence(){
-	
+
 	let select = document.getElementById("add-evidence");
-	
+
 	if( addFilters.has(select.value )){
 		addFilters.delete(select.value);
 	} else {
 		addFilters.add(select.value);
 	}
-		
+
 	drawEvidenceFilters();
 }
 
 function discountEvidence(){
-	
+
 	let select = document.getElementById("discount-evidence");
-	
+
 	if( discountFilters.has(select.value )){
 		discountFilters.delete(select.value);
 	} else {
 		discountFilters.add(select.value);
 	}
 
-	
-		
+
+
 	drawEvidenceFilters();
 }
 
 
 
 function drawEvidenceFilters(){
-	
+
 	// Reset Dropdowns
 	let evidenceDropdowns = document.getElementsByClassName("evidence-list");
 	for ( let d of evidenceDropdowns ){
 			d.value = "default";
 		};
-		
+
 	// Draw list
 	let str = "";
 	addFilters.forEach( (f) => {
-		str += `<div>+ ${f}</div>`;
+		str += `<div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+</svg> ${f}</div>`;
 	});
 	discountFilters.forEach( (f) => {
-		str += `<div>- ${f}</div>`;
+		str += `<div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-minus" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M5.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+</svg> ${f}</div>`;
 	});
 	document.getElementById("add-evidence-filters").innerHTML = str;
-	
-	
+
+
 	drawPossibleGhosts();
 }
 
@@ -234,8 +248,8 @@ function capitalizeFirstLetter(string) {
 
 function drawPossibleGhosts(){
 	let possibleGhosts = [...GHOSTS];
-	
-	
+
+
 	possibleGhosts = possibleGhosts.filter( (g) => {
 		let found = true;
 		addFilters.forEach( (f) => {
@@ -243,7 +257,7 @@ function drawPossibleGhosts(){
 		});
 		return found;
 	});
-	
+
 	possibleGhosts = possibleGhosts.filter( (g) => {
 		let found = true;
 		discountFilters.forEach( (f) => {
@@ -251,14 +265,16 @@ function drawPossibleGhosts(){
 		});
 		return found;
 	});
-	
+
 	let str = "";
-	
+
+	let showDetails = document.getElementById("details").checked;
+
 	possibleGhosts.forEach( (i) => {
 		let tip = "";
-		if(possibleGhosts.length < 5){ 
+		if(possibleGhosts.length < 7 || showDetails){
 			tip = i.tips + "<br/>";
-		
+
 			for( e of i.evidence){
 				if( !addFilters.has(e) ){
 					tip += `+ ${e}<br/>`;
@@ -270,9 +286,99 @@ function drawPossibleGhosts(){
 			<div>${tip}</div>
 		</div>`;
 	});
-	
+
 	document.getElementById("candidate-ghosts").innerHTML = str;
 }
 
+
+
+/* ADVANCED GAME TRACKING */
+
+const DEFAULT_GAME_CONTEXT = {
+	offset:0,	// Times in seconds
+	startTime:0,
+	state:"INACTIVE",
+}
+
+let gameContext = DEFAULT_GAME_CONTEXT;
+
+
+function gameUIUpdate(){
+
+	let tSeconds = Date.now()/1000;
+	let time = 0;
+
+	if( gameContext.state == "INACTIVE"){
+		document.getElementById("action_start").style.display = "block";
+		document.getElementById("action_pause").style.display = "none";
+		document.getElementById("action_reset").style.display = "block";
+
+		document.getElementById("header").classList = "header";
+
+	} else if ( gameContext.state == "ACTIVE" ){
+		document.getElementById("action_start").style.display = "none";
+		document.getElementById("action_pause").style.display = "block";
+		document.getElementById("action_reset").style.display = "none";
+
+		time = gameContext.offset + tSeconds - gameContext.startTime;
+
+		document.getElementById("header").classList = "header active";
+
+	} else if ( gameContext.state == "PAUSED"){
+		document.getElementById("action_start").style.display = "block";
+		document.getElementById("action_pause").style.display = "none";
+		document.getElementById("action_reset").style.display = "block";
+
+		time = gameContext.offset;
+
+		document.getElementById("header").classList = "header paused";
+	}
+
+
+
+	document.getElementById("timer").innerHTML = timeConverter(time);
+
+}
+
+
+document.getElementById("action_start").addEventListener("click",()=>{
+	gameContext.startTime = Date.now()/1000;
+	gameContext.state = "ACTIVE";
+
+	gameUIUpdate();
+});
+document.getElementById("action_pause").addEventListener("click",()=>{
+	gameContext.offset += Date.now()/1000 - gameContext.startTime;
+	gameContext.state = "PAUSED";
+
+	gameUIUpdate();
+});
+document.getElementById("action_reset").addEventListener("click",()=>{
+	gameContext.offset = 0;
+	gameContext.state = "INACTIVE";
+
+	gameUIUpdate();
+});
+
+
+gameUIUpdate();
+setInterval(gameUIUpdate,1000);
+
 init();
 drawPossibleGhosts();
+
+
+
+
+
+function pad(num, size) {
+    var s = "000000000" + num;
+    return s.substr(s.length-size);
+}
+
+function timeConverter(t){
+	t = Math.floor(t);
+	let seconds = t % 60;
+	let minutes = Math.floor(t/60);
+	return `${pad(minutes,2)}:${pad(seconds,2)}`;
+}
