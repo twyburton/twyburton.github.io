@@ -145,6 +145,30 @@ const GHOSTS = [
 		weakness:"Extreme activity with lots of players nearby makes it easy to identify.",
 		tips:""
 	},
+	{
+		name:"Hantu",
+		evidence:[
+			"FINGERPRINTS",
+			"GHOST_ORB",
+			"GHOST_WRITING"
+		],
+		description:"",
+		strength:"",
+		weakness:"",
+		tips:""
+	},
+	{
+		name:"Yokai",
+		evidence:[
+			"SPIRIT_BOX",
+			"GHOST_ORB",
+			"GHOST_WRITING"
+		],
+		description:"",
+		strength:"",
+		weakness:"",
+		tips:""
+	},
 ];
 
 
