@@ -8,7 +8,7 @@ function display(){
 
     let differenceDays = differenceS/ (60*60*24);
 
-    document.getElementById("time").innerText = `${differenceDays.toFixed(0)} Days`;
+    document.getElementById("time").innerText = `${differenceDays.toFixed(0)} Days since 6th July`;
 }
 
 display();
