@@ -18,11 +18,11 @@
 ### F1 Live Timing Delay
 [Chrome Extension](https://chrome.google.com/webstore/detail/f1-live-timing-delay/gchagbhdnlcnmkhplddglibfdjbbeclg)
 
-### Did Youtube Unsubscribe Me?
+### Did YouTube Unsubscribe Me?
 [Chrome Extension](https://chrome.google.com/webstore/detail/did-youtube-unsubscribe-m/lbodbdbdjefgplcajojgampojiiamjhe)
 
 ### Phasmophobia Evidence Journal
 [Website](https://twyburton.github.io/phasmophobia/)
-  
+
 ### BBC Page Difference (No Longer Under Development: See News Archive)
 [Chrome Extension](https://chrome.google.com/webstore/detail/bbc-diff/fkaaeikoijnlbcopbonidfkpgmodhbaf)

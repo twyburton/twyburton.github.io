@@ -1,4 +1,5 @@
 
+// Defines the ghost types
 const GHOSTS = [
 	{
 		name:"spirit",
@@ -146,16 +147,12 @@ const GHOSTS = [
 	},
 ];
 
-const BUTTONS = {
-	PLAY: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>',
-	PAUSE: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/></svg>',
-	RESET: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/></svg>',
-}
 
 
+// Initialise UI from ghost data
 function init(){
 
-	// Get all evidences
+	// Get all different types of evidence
 	let evidences = new Set();
 	GHOSTS.forEach( (i) => {
 
@@ -165,7 +162,7 @@ function init(){
 
 	});
 
-	// Add evidences to dropdowns
+	// Add different types of evidence to dropdowns
 	let evidenceDropdowns = document.getElementsByClassName("evidence-list");
 	evidences.forEach( (e) => {
 		for ( let d of evidenceDropdowns ){
@@ -176,11 +173,12 @@ function init(){
 }
 
 
-let addFilters = new Set();
-let discountFilters = new Set();
+let addFilters = new Set();	// set of evidence collected
+let discountFilters = new Set(); // set of evidence that has been discounted
+
+
 
 function findEvidence(){
-
 	let select = document.getElementById("add-evidence");
 
 	if( addFilters.has(select.value )){
@@ -188,7 +186,6 @@ function findEvidence(){
 	} else {
 		addFilters.add(select.value);
 	}
-
 	drawEvidenceFilters();
 }
 
@@ -201,9 +198,6 @@ function discountEvidence(){
 	} else {
 		discountFilters.add(select.value);
 	}
-
-
-
 	drawEvidenceFilters();
 }
 
@@ -293,7 +287,6 @@ function drawPossibleGhosts(){
 
 
 /* ADVANCED GAME TRACKING */
-
 const DEFAULT_GAME_CONTEXT = {
 	offset:0,	// Times in seconds
 	startTime:0,
